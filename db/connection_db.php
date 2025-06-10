@@ -1,8 +1,8 @@
 <?php
     // connection_db.php
     $host = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "";
+    $dbUsername = "pos_user";
+    $dbPassword = "1234";
     $dbName = "pos_mart";
     //$port = 3306; // Use the correct port (3306 or 3307)
 
