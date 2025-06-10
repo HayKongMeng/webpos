@@ -1,0 +1,130 @@
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:09 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 230
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 231
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 232
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 233
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 234
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "ContactNumber" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 242
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "Email" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 245
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "CustomerAddress" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 248
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "PurchasedItems" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 252
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Warning:  Undefined array key "TotalItemsPurchased" in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
+[10-Jun-2025 19:38:10 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\WebPOS\src\dashboard.php on line 261
