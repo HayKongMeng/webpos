@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "<p class='text-red-500 text-sm'>Please enter a category name.</p>";
     } else {
         // Check if the category name already exists
-        $stmt_check = $conn->prepare("SELECT CategoryID FROM Categories WHERE CategoryName = ?");
+        $stmt_check = $conn->prepare("SELECT CategoryID FROM categories WHERE CategoryName = ?");
         $stmt_check->bind_param("s", $categoryName);
         $stmt_check->execute();
         $stmt_check->store_result();
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = "<p class='text-red-500 text-sm'>Category name already exists.</p>";
         } else {
             // Insert the new category into the database
-            $stmt_insert = $conn->prepare("INSERT INTO Categories (CategoryName) VALUES (?)");
+            $stmt_insert = $conn->prepare("INSERT INTO categories (CategoryName) VALUES (?)");
             $stmt_insert->bind_param("s", $categoryName);
 
             if ($stmt_insert->execute()) {
