@@ -1,7 +1,7 @@
 <?php
 // dashboard.php
 
-require_once '../db/connection_db.php'; // Include database connection
+require_once __DIR__ . '/../db/connection_db.php';
 
 session_start();
 
@@ -24,9 +24,11 @@ $sale_no = 0;
 
 // Total number of products
 $sql_products = "SELECT COUNT(*) AS total_products FROM products";
-if (!empty($conn)) {
-    $result_products = $conn->query($sql_products);
+if ($conn->connect_error) {
+    error_log("Connection error: " . $conn->connect_error);
+    die("Database connection failed.");
 }
+$result_products = $conn->query($sql_products);
 $total_products = $result_products->fetch_assoc()['total_products'] ?? 0;
 
 // Total number of categories
@@ -135,7 +137,13 @@ $conn->close(); // Close the database connection
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 min-h-screen">
 
-<?php include 'sidebar.php'; ?>
+<?php include 'sidebar.php'; 
+if (file_exists('sidebar.php')) {
+    include 'sidebar.php';
+} else {
+    error_log("sidebar.php not found");
+}
+?>
 
 <!-- Main content area -->
 <div class="transition-all duration-300 ease-in-out md:ml-64 p-4 sm:p-6 lg:p-8">

@@ -173,4 +173,5 @@ $conn->close();
     });
 </script>
 </body>
+<?php ob_end_flush(); ?>
 </html>
