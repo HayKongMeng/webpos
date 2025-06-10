@@ -67,6 +67,10 @@ GROUP BY
 ORDER BY
     s.SaleDate ASC";
 $result_recent_sales = $conn->query($sql_recent_sales);
+if (!$result_recent_sales) {
+    error_log("Query failed: " . $conn->error);
+    die("An error occurred. Please contact the administrator.");
+}
 $recent_sales = $result_recent_sales->fetch_all(MYSQLI_ASSOC);
 
 $conn->close(); // Close the database connection
