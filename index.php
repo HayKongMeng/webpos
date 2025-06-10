@@ -8,7 +8,10 @@ session_start();
 ob_start(); // Start output buffering
 
 $login_message = "";
-
+if ($conn->connect_error) {
+    error_log("Connection failed: " . $conn->connect_error);
+    die("Connection failed. Please contact the administrator.");
+}
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
