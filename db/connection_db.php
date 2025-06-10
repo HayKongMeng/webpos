@@ -7,7 +7,7 @@
     //$port = 3306; // Use the correct port (3306 or 3307)
 
     // Establish database connection
-    $conn = new mysqli("localhost", "root", "", "pos_mart");
+    $conn = new mysqli("localhost", "pos_user", "1234", "pos_mart");
 
 
     // Check connection
