@@ -22,7 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
+// Run this once to reset the password
+$newPassword = "abc123";
+$hashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+echo "New hashed password: " . $hashedPassword;
 
+// Update your database with this new hash
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $storedHashedPassword = $row["Password"];
