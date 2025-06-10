@@ -1,9 +1,18 @@
 <?php
 // dashboard.php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/php_errors.log');
 
 require_once __DIR__ . '/../db/connection_db.php';
 
 session_start();
+
+if ($conn->connect_error) {
+    error_log("Database connection failed: " . $conn->connect_error);
+    die("Database connection failed. Please try again later.");
+}
 
 // Check if the user is logged in
 if (!isset($_SESSION['UserID']) || !isset($_SESSION['Username'])) {
@@ -43,36 +52,22 @@ $total_customers = $result_customers->fetch_assoc()['total_customers'] ?? 0;
 
 
 
-// Most recent 5 sales transactions
-$sql_recent_sales = "SELECT
-    s.SaleID,
-    s.SaleDate,
+$sql_recent_sales = "SELECT 
+    s.SaleID, 
+    s.SaleDate, 
     s.TotalAmount,
-    c.CustomerName,
-    c.ContactNumber,
-    c.Email,
-    c.CustomerAddress,
-    GROUP_CONCAT(
-        CONCAT(p.ProductName, ' (Qty: ', si.Quantity, ')')
-    ) AS PurchasedItems,
-    COUNT(si.ProductID) AS TotalItemsPurchased
-FROM
-    sales s
-LEFT JOIN
-    customers c ON s.CustomerID = c.CustomerID
-LEFT JOIN
-    saleItems si ON s.SaleID = si.SaleID
-LEFT JOIN
-    products p ON si.ProductID = p.ProductID
-GROUP BY
-    s.SaleID
-ORDER BY
-    s.SaleDate ASC";
+    c.CustomerName
+FROM sales s
+LEFT JOIN customers c ON s.CustomerID = c.CustomerID
+ORDER BY s.SaleDate DESC
+LIMIT 5";
+
 $result_recent_sales = $conn->query($sql_recent_sales);
 if (!$result_recent_sales) {
-    error_log("Query failed: " . $conn->error);
-    die("An error occurred. Please contact the administrator.");
+    error_log("Sales query failed: " . $conn->error);
+    die("Error loading sales data. Please contact support.");
 }
+
 $recent_sales = $result_recent_sales->fetch_all(MYSQLI_ASSOC);
 
 $conn->close(); // Close the database connection
