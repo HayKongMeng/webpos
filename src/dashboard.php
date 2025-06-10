@@ -57,11 +57,11 @@ $sql_recent_sales = "SELECT
 FROM
     sales s
 LEFT JOIN
-    sustomers c ON s.CustomerID = c.CustomerID
+    customers c ON s.CustomerID = c.CustomerID
 LEFT JOIN
     saleItems si ON s.SaleID = si.SaleID
 LEFT JOIN
-    sroducts p ON si.ProductID = p.ProductID
+    products p ON si.ProductID = p.ProductID
 GROUP BY
     s.SaleID
 ORDER BY
