@@ -23,19 +23,19 @@ $sale_no = 0;
 // --- Fetch data for the dashboard ---
 
 // Total number of products
-$sql_products = "SELECT COUNT(*) AS total_products FROM Products";
+$sql_products = "SELECT COUNT(*) AS total_products FROM products";
 if (!empty($conn)) {
     $result_products = $conn->query($sql_products);
 }
 $total_products = $result_products->fetch_assoc()['total_products'] ?? 0;
 
 // Total number of categories
-$sql_categories = "SELECT COUNT(*) AS total_categories FROM Categories";
+$sql_categories = "SELECT COUNT(*) AS total_categories FROM categories";
 $result_categories = $conn->query($sql_categories);
 $total_categories = $result_categories->fetch_assoc()['total_categories'] ?? 0;
 
 // Total number of customers
-$sql_customers = "SELECT COUNT(*) AS total_customers FROM Customers";
+$sql_customers = "SELECT COUNT(*) AS total_customers FROM customers";
 $result_customers = $conn->query($sql_customers);
 $total_customers = $result_customers->fetch_assoc()['total_customers'] ?? 0;
 
@@ -55,13 +55,13 @@ $sql_recent_sales = "SELECT
     ) AS PurchasedItems,
     COUNT(si.ProductID) AS TotalItemsPurchased
 FROM
-    Sales s
+    sales s
 LEFT JOIN
-    Customers c ON s.CustomerID = c.CustomerID
+    sustomers c ON s.CustomerID = c.CustomerID
 LEFT JOIN
-    SaleItems si ON s.SaleID = si.SaleID
+    saleItems si ON s.SaleID = si.SaleID
 LEFT JOIN
-    Products p ON si.ProductID = p.ProductID
+    sroducts p ON si.ProductID = p.ProductID
 GROUP BY
     s.SaleID
 ORDER BY
