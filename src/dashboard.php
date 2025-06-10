@@ -48,7 +48,6 @@ $total_customers = $result_customers->fetch_assoc()['total_customers'] ?? 0;
 
 
 
-// Most recent 5 sales transactions
 $sql_recent_sales = "SELECT
     s.SaleID,
     s.SaleDate,
@@ -66,13 +65,14 @@ FROM
 LEFT JOIN
     customers c ON s.CustomerID = c.CustomerID
 LEFT JOIN
-    saleItems si ON s.SaleID = si.SaleID
+    saleitems si ON s.SaleID = si.SaleID
 LEFT JOIN
     products p ON si.ProductID = p.ProductID
 GROUP BY
     s.SaleID
 ORDER BY
     s.SaleDate ASC";
+    
 $result_recent_sales = $conn->query($sql_recent_sales);
 if (!$result_recent_sales) {
     error_log("Query failed: " . $conn->error);

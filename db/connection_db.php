@@ -1,13 +1,13 @@
 <?php
     // connection_db.php
-    $host = "db"; // Use the service name from docker-compose.yml
-    $dbUsername = "pos_user";
-    $dbPassword = "1234";
+    $host = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
     $dbName = "pos_mart";
     //$port = 3306; // Use the correct port (3306 or 3307)
 
     // Establish database connection
-   $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
 
     if ($conn->connect_error) {
