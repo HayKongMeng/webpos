@@ -14,7 +14,7 @@ if (!isset($_SESSION['UserID']) || !isset($_SESSION['Username'])) {
 }
 
 // Fetch all products from the database
-$sql_products = "SELECT p.ProductID, p.ProductName, p.product_image, p.Price, p.StockQuantity, p.add_date, c.CategoryName FROM products p INNER JOIN Categories c ON p.CategoryID = c.CategoryID";
+$sql_products = "SELECT p.ProductID, p.ProductName, p.product_image, p.Price, p.StockQuantity, p.add_date, c.CategoryName FROM products p INNER JOIN categories c ON p.CategoryID = c.CategoryID";
 $result_products = $conn->query($sql_products);
 $products = $result_products->fetch_all(MYSQLI_ASSOC);
 
