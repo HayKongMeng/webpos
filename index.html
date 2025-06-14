@@ -14,52 +14,169 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <style>
+  /* Modern Contact Button */
+  .modern-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #FF416C, #FF4B2B);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 75, 43, 0.25);
+    background: linear-gradient(135deg, #FF4B2B, #FF416C);
+  }
+  
+  .modern-contact-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Modern Explore Button */
+  .modern-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #FF4B2B;
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern-explore-btn:hover {
+    background-color: #FF416C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 75, 43, 0.25);
+  }
+  
+  .modern-explore-btn svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .modern-explore-btn:hover svg {
+    transform: translateX(4px);
+  }
+</style>
   </head>
   <body>
     <div class="header">
-      <div class="container">
-        <div class="navbar">
-          <div class="logo">
-            <img src="images/logo.png" alt="RedStore Logo" width="125px" />
-          </div>
-          <nav>
-            <ul id="MenuItems">
-              <li><a href="">Home</a></li>
-              <li><a href="/products.html">Products</a></li>
-              <li><a href="">About</a></li>
-              <li><a href="">Contact</a></li>
-              <li><a href="">Account</a></li>
-            </ul>
-          </nav>
-          <img
-            src="images/cart.png"
-            alt="Shopping cart icon"
-            width="30px"
-            height="30px"
-          />
-          <img
-            src="images/menu.png"
-            alt="menu icon"
-            class="menu-icon"
-            onclick="menutoggle()"
-          />
-        </div>
-        <div class="row">
-          <div class="col-2">
-            <h1>Give Your Workout<br />A New Style!</h1>
-            <p>
-              Success isn't always about greatness. It's about consistency.
-              Consistent<br />
-              hard work gains success. Greatness will come.
-            </p>
-            <a href="" class="btn">Explore Now &#8594; </a>
-          </div>
-          <div class="col-2">
-            <img src="images/image1.png" alt="Two men being active" />
-          </div>
-        </div>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="RedStore Logo" width="125px" />
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="">Home</a></li>
+          <li><a href="/products.html">Products</a></li>
+          <li><a href="">About</a></li>
+          <li>
+            <a href="" class="modern-contact-btn">
+              <span>Contact</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 12H16M12 8V16M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+          <li><a href="">Account</a></li>
+        </ul>
+      </nav>
+      <img src="images/cart.png" alt="Shopping cart icon" width="30px" height="30px" />
+      <img src="images/menu.png" alt="menu icon" class="menu-icon" onclick="menutoggle()" />
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h1>Give Your Workout<br />A New Style!</h1>
+        <p>
+          Success isn't always about greatness. It's about consistency.
+          Consistent<br />
+          hard work gains success. Greatness will come.
+        </p>
+        <a href="" class="modern-explore-btn">
+          Explore Now
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="col-2">
+        <img src="images/image1.png" alt="Two men being active" />
       </div>
     </div>
+  </div>
+</div>
+
+<style>
+  /* Modern Contact Button */
+  .modern-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #FF416C, #FF4B2B);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 75, 43, 0.25);
+    background: linear-gradient(135deg, #FF4B2B, #FF416C);
+  }
+  
+  .modern-contact-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Modern Explore Button */
+  .modern-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #FF4B2B;
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern-explore-btn:hover {
+    background-color: #FF416C;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 75, 43, 0.25);
+  }
+  
+  .modern-explore-btn svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .modern-explore-btn:hover svg {
+    transform: translateX(4px);
+  }
+</style>
 
     <!-- Featured Categories -->
 
