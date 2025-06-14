@@ -6,7 +6,7 @@
     $dbName = "pos_mart";
 
     // Establish database connection
-   $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
 
     if ($conn->connect_error) {

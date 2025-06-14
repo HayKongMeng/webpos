@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $filesize = $_FILES["productImage"]["size"];
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
-            $uploadDir = "uploads/products/"; // Directory to store images (create this folder)
+            $uploadDir = __DIR__ . "/../uploads/products/";
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }

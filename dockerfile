@@ -17,8 +17,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html/
 
 # Adjust permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+RUN sudo chown -R www-data:www-data /var/www/html \
+    && sudo chmod -R 755 /var/www/html
 
 # Expose port 80
 EXPOSE 80
