@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // If no validation errors, insert the product into the database
         if (empty($message)) {
-            $stmt = $conn->prepare("INSERT INTO Products (ProductName, CategoryID, Price, StockQuantity, product_image) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO products (ProductName, CategoryID, Price, StockQuantity, product_image) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("sidds", $productName, $categoryId, $price, $stockQuantity, $productImage);
 
             if ($stmt->execute()) {
