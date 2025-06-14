@@ -4,8 +4,8 @@
     <!-- Header -->
     <div class="flex items-center h-20 px-8 border-b dark:border-gray-800">
         <div class="flex items-center space-x-3">
-            <img src="assets/logo.png" alt="Logo" class="w-8 h-8">
-            <span class="font-semibold text-xl text-gray-800 dark:text-white">WebPOS</span>
+            <img src="logo.png" alt="Logo" class="w-8 h-8">
+            <!-- <span class="font-semibold text-xl text-gray-800 dark:text-white">WebPOS</span> -->
         </div>
         <button id="sidebar-close" class="md:hidden absolute right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
