@@ -80,14 +80,14 @@ $conn->close();
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 <div class="max-w-md w-full mx-4">
     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-        <div class="bg-indigo-600 py-6 px-8">
-            <h2 class="text-2xl font-bold text-white text-center">Inventory Management</h2>
+        <div class="bg-[#ff483f] py-6 px-8">
+            <h2 class="text-2xl font-bold text-white text-center">Red Store System</h2>
         </div>
 
         <div class="p-8">
             <div class="flex justify-center mb-6">
                 <div class="bg-indigo-100 rounded-full p-3">
-                    <i class="fas fa-user-lock text-indigo-600 text-2xl"></i>
+                    <i class="fas fa-user-lock text-[#ff483f] text-2xl"></i>
                 </div>
             </div>
 
@@ -133,21 +133,21 @@ $conn->close();
                 <div>
                     <button
                             type="submit"
-                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200"
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#ff483f] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200"
                     >
                         <i class="fas fa-sign-in-alt mr-2"></i> Login
                     </button>
                 </div>
 
                 <div class="text-center text-sm text-gray-500">
-                    <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-200">Forgot your password?</a>
+                    <a href="#" class="font-medium text-[#ff483f] hover:text-indigo-500 transition duration-200">Forgot your password?</a>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="text-center mt-4 text-sm text-gray-600">
-        &copy; <?php echo date("Y"); ?> Inventory Management System
+        &copy; <?php echo date("Y"); ?> Red Store Systems. All rights reserved.
     </div>
 </div>
 

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $categoryName = $_POST['categoryname'];
 
 
-        $stmt = $conn->prepare("UPDATE Products SET productName = ?, Price = ?, StockQuantity = ?, CategoryID = (SELECT CategoryID FROM Categories WHERE CategoryName = ?) WHERE ProductID = ?");
+        $stmt = $conn->prepare("UPDATE products SET productName = ?, Price = ?, StockQuantity = ?, CategoryID = (SELECT CategoryID FROM Categories WHERE CategoryName = ?) WHERE ProductID = ?");
         $stmt->bind_param("sdisi", $productName, $price, $stockQuantity, $categoryName, $productID); // Corrected number of parameters
 
         if ($stmt->execute()) {

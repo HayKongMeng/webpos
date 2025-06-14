@@ -32,12 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $filesize = $_FILES["productImage"]["size"];
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
-            $uploadDir = __DIR__ . "/../uploads/products/";
+            $uploadDir = __DIR__ . "/uploads/products/";
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
-            $targetFile = $uploadDir . uniqid() . "." . $ext; // Unique filename
-
+            $uniqueName = uniqid() . "." . $ext;
+            $targetFile = $uploadDir . $uniqueName;
+            
             $maxSize = 2 * 1024 * 1024; // 2MB
 
             if (!array_key_exists($ext, $allowed) || !in_array($filetype, $allowed)) {
@@ -46,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $message = "<p class='text-red-500 text-sm'>Error: Image size should not exceed 2MB.</p>";
             } else {
                 if (move_uploaded_file($_FILES["productImage"]["tmp_name"], $targetFile)) {
-                    $productImage = $targetFile; // Save the path to the database
+                     $productImage = "uploads/products/" . $uniqueName;
                 } else {
                     $message = "<p class='text-red-500 text-sm'>Error: There was an error uploading your file.</p>";
                 }
@@ -91,121 +92,84 @@ $conn->close();
     <title>Add New Product</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 h-screen flex">
+<body class="bg-gradient-to-br from-blue-50 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen flex">
 
 <?php include 'sidebar.php' ?>
 
-
-
-<div id="content" class="flex-1 p-6 lg:ml-64 flex items-start justify-center">
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden md:max-w-2xl w-full flex flex-col md:flex-row">
-
-        <div class="p-6 md:p-8 w-full md:w-1/2">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6 text-center md:text-left">Add New Product</h2>
+<div class="flex-1 flex items-center justify-center px-4 py-8">
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden w-full max-w-4xl flex flex-col md:flex-row">
+        <!-- Form Section -->
+        <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center md:text-left">Add Product</h2>
             <?php if (!empty($message)): ?>
-                <div class="mb-4 text-center md:text-left text-gray-700 dark:text-gray-300"><?php echo $message; ?></div>
-            <?php endif; ?>
-            <form method="post" enctype="multipart/form-data" class="space-y-4 md:space-y-5">
-                <div class="relative">
-                    <input type="text" id="productName" name="productName" required
-                           class="peer w-full border-b-2 border-gray-300 dark:border-gray-600 bg-transparent pt-3 pb-2 px-0 text-gray-900 dark:text-gray-200 focus:border-blue-500 focus:outline-none transition-colors text-sm md:text-base"
-                           placeholder=" " />
-                    <label for="productName"
-                           class="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-xs md:text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 dark:peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-blue-500 peer-focus:text-xs md:text-sm">
-                        Product Name
-                    </label>
+                <div class="mb-4 text-center text-sm <?php echo strpos($message, 'success') ? 'text-green-600' : 'text-red-500'; ?>">
+                    <?php echo $message; ?>
                 </div>
-
-                <div class="relative mt-2 md:mt-4">
+            <?php endif; ?>
+            <form method="post" enctype="multipart/form-data" class="space-y-6">
+                <div>
+                    <label for="productName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Product Name</label>
+                    <input type="text" id="productName" name="productName" required
+                        class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-400 focus:outline-none transition" />
+                </div>
+                <div>
+                    <label for="categoryId" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
                     <select id="categoryId" name="categoryId" required
-                            class="appearance-none absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10 p-5 mt-2 border-red-950">
-                        <option value="" disabled selected hidden></option>
+                        class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-400 focus:outline-none transition">
+                        <option value="" disabled selected hidden>Select Category</option>
                         <?php foreach ($categories as $category): ?>
                             <option value="<?php echo $category['CategoryID']; ?>"><?php echo htmlspecialchars($category['CategoryName']); ?></option>
                         <?php endforeach; ?>
                     </select>
-
-                    <div class="relative w-full">
-                        <div class="flex items-center justify-between w-full px-3 md:px-4 py-2 md:py-3 text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl cursor-pointer group hover:border-blue-400 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-200 transition-all duration-200">
-                            <div class="flex items-center space-x-2 md:space-x-3">
-                                <svg class="w-4 h-4 md:w-5 md:h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </div>
+                <div>
+                    <label for="price" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Price</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-gray-400">$</span>
+                        <input type="number" id="price" name="price" step="0.01" required
+                            class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 pl-8 pr-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-400 focus:outline-none transition" />
+                    </div>
+                </div>
+                <div>
+                    <label for="stockQuantity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Stock Quantity</label>
+                    <input type="number" id="stockQuantity" name="stockQuantity" required
+                        class="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-4 py-2 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-400 focus:outline-none transition" />
+                </div>
+                <div>
+                    <label for="productImage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Product Image (Optional)</label>
+                    <div class="flex items-center gap-4">
+                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-800 hover:border-blue-400 transition">
+                            <input type="file" name="productImage" id="productImage" class="hidden" accept="image/*" />
+                            <span class="flex flex-col items-center justify-center">
+                                <svg class="w-8 h-8 text-gray-400 dark:text-gray-500 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4a1 1 0 011-1h8a1 1 0 011 1v12m-4 4h-4a1 1 0 01-1-1v-1a1 1 0 011-1h4a1 1 0 011 1v1a1 1 0 01-1 1z" />
                                 </svg>
-
-                                <span id="categoryDisplay" class="font-medium truncate text-gray-500 dark:text-gray-400 text-sm md:text-base">Select Category</span>
-                            </div>
-
-                            <div class="flex items-center transition-transform duration-200 group-focus-within:rotate-180">
-                                <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-blue-500 group-focus-within:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <label for="categoryId" class="absolute -top-2 left-3 px-1 bg-white dark:bg-gray-900 text-xs font-medium text-blue-500">
-                            Category
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Click to upload</span>
+                            </span>
                         </label>
                     </div>
                 </div>
-
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                        <span class="text-gray-500 dark:text-gray-400 text-sm ml-1">$</span>
-                    </div>
-                    <input type="number" id="price" name="price" step="0.01" required
-                           class="peer w-full border-b-2 border-gray-300 dark:border-gray-600 bg-transparent pt-3 pb-2 pl-5 pr-6 text-gray-900 dark:text-gray-200 focus:border-blue-500 focus:outline-none transition-colors text-sm md:text-base"
-                           placeholder=" " />
-                    <label for="price"
-                           class="absolute left-5 -top-3.5 text-gray-600 dark:text-gray-400 text-xs md:text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 dark:peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-blue-500 peer-focus:text-xs md:text-sm">
-                        Price
-                    </label>
-                </div>
-
-                <div class="relative">
-                    <input type="number" id="stockQuantity" name="stockQuantity" required
-                           class="peer w-full border-b-2 border-gray-300 dark:border-gray-600 bg-transparent pt-3 pb-2 px-0 text-gray-900 dark:text-gray-200 focus:border-blue-500 focus:outline-none transition-colors text-sm md:text-base"
-                           placeholder=" " />
-                    <label for="stockQuantity"
-                           class="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-xs md:text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 dark:peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-blue-500 peer-focus:text-xs md:text-sm">
-                        Stock Quantity
-                    </label>
-                </div>
-
-                <div class="mt-4 md:mt-6">
-                    <label for="productImage" class="block text-gray-600 dark:text-gray-400 text-sm md:text-base mb-2">Product Image (Optional)</label>
-                    <div class="relative border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 md:p-6 flex justify-center items-center hover:border-blue-500 transition-colors bg-white dark:bg-gray-700">
-                        <input type="file" name="productImage" id="productImage" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
-                        <div class="text-center">
-                            <svg class="mx-auto h-8 w-8 md:h-12 md:w-12 text-gray-400 dark:text-gray-600" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Drop an image here or click to upload</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium py-2 md:py-3 px-4 rounded-lg mt-4 md:mt-6 hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform transition hover:scale-shadow-md text-sm md:text-base">
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-2 rounded-lg shadow-lg transition focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
                     Add Product
                 </button>
             </form>
-            <p class="mt-4 md:mt-6 text-center text-gray-600 dark:text-gray-400 md:text-left text-sm">
-                <a href="dashboard.php" class="text-blue-500 hover:text-blue-700 font-medium">← Back to Dashboard</a>
-            </p>
+            <div class="mt-6 text-center">
+                <a href="dashboard.php" class="text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">← Back to Dashboard</a>
+            </div>
         </div>
-        <div class="p-6 md:p-8 w-full md:w-1/2 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-            <div id="image-preview" class="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-600">
+        <!-- Image Preview Section -->
+        <div class="hidden md:flex w-1/2 bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 items-center justify-center p-8">
+            <div id="image-preview" class="w-full h-64 flex items-center justify-center rounded-xl bg-white/60 dark:bg-gray-900/60 border border-dashed border-gray-200 dark:border-gray-700">
                 <div class="text-center">
-                    <svg class="mx-auto h-12 w-12 md:h-16 md:w-16" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                    <svg class="mx-auto h-16 w-16 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 48 48">
                         <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    <p class="mt-2 text-sm">Image preview will appear here</p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Image preview will appear here</p>
                 </div>
             </div>
         </div>
@@ -213,91 +177,41 @@ $conn->close();
 </div>
 
 <script>
+    // Tailwind config for dark mode
     tailwind.config = {
         darkMode: 'class',
         theme: {
             extend: {
-                colors: {
-                    primary: {
-                        50: '#f0f9ff',
-                        100: '#e0f2fe',
-                        200: '#bae6fd',
-                        300: '#7dd3fc',
-                        400: '#38bdf8',
-                        500: '#0ea5e9',
-                        600: '#0284c7',
-                        700: '#0369a1',
-                        800: '#075985',
-                        900: '#0c4a6e',
-                        950: '#082f49',
-                    },
-                    secondary: {
-                        50: '#f8fafc',
-                        100: '#f1f5f9',
-                        200: '#e2e8f0',
-                        300: '#cbd5e1',
-                        400: '#94a3b8',
-                        500: '#64748b',
-                        600: '#475569',
-                        700: '#334155',
-                        800: '#1e293b',
-                        900: '#0f172a',
-                        950: '#020617',
-                    }
-                },
-                fontFamily: {
-                    sans: ['Inter var', 'sans-serif'],
-                },
-                boxShadow: {
-                    'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                    'input': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-                },
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
             }
         }
-    }
+    };
 
+    // Image preview logic
     document.getElementById('productImage').addEventListener('change', function(event) {
         const previewContainer = document.getElementById('image-preview');
-        previewContainer.innerHTML = ''; // Clear previous preview
-
+        previewContainer.innerHTML = '';
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
-
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                img.classList.add('max-w-md', 'max-h-48', 'rounded-md', 'shadow-sm');
+                img.classList.add('max-h-56', 'rounded-lg', 'shadow-md', 'mx-auto');
                 previewContainer.appendChild(img);
             }
-
             reader.readAsDataURL(file);
         } else {
-            // Display default preview message if no file selected
-            const defaultPreview = `
-                    <div class="text-center">
-                        <svg class="mx-auto h-12 w-12 md:h-16 md:w-16 text-gray-400 dark:text-gray-600" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <p class="mt-2 text-sm">Image preview will appear here</p>
-                    </div>
-                `;
-            previewContainer.innerHTML = defaultPreview;
+            previewContainer.innerHTML = `
+                <div class="text-center">
+                    <svg class="mx-auto h-16 w-16 text-gray-300 dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 48 48">
+                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Image preview will appear here</p>
+                </div>
+            `;
         }
     });
-
-    document.getElementById('categoryId').addEventListener('change', function() {
-        const select = this;
-        const text = select.options[select.selectedIndex].text;
-        document.getElementById('categoryDisplay').textContent = text;
-        document.getElementById('categoryDisplay').classList.remove('text-gray-500', 'dark:text-gray-400');
-        document.getElementById('categoryDisplay').classList.add('text-gray-800', 'dark:text-gray-200');
-    });
-
-
-    // Assuming you are using some TWE library for enhanced UI components
-    // If not, you can remove this line
-    // initTWE({ Input });
 </script>
 </body>
 </html>

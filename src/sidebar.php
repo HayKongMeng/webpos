@@ -1,10 +1,10 @@
 <!-- Sidebar component -->
 <!-- Modern Sidebar Component -->
-<div id="sidebar" class="min-h-screen fixed flex flex-col top-0 left-0 w-72 bg-white dark:bg-gray-900 h-full shadow-xl z-50 transition-all duration-300 ease-in-out md:translate-x-0">
+<div id="sidebar" class="min-h-screen fixed flex flex-col top-0 left-0 w-70 bg-white dark:bg-gray-900 h-full shadow-xl z-50 transition-all duration-300 ease-in-out md:translate-x-0">
     <!-- Header -->
     <div class="flex items-center h-20 px-8 border-b dark:border-gray-800">
         <div class="flex items-center space-x-3">
-            <img src="logo.png" alt="Logo" class="w-8 h-8">
+            <img src="logo.png" alt="Logo" class="w-20 h-8">
             <!-- <span class="font-semibold text-xl text-gray-800 dark:text-white">WebPOS</span> -->
         </div>
         <button id="sidebar-close" class="md:hidden absolute right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400">
@@ -54,22 +54,23 @@
         <div class="flex items-center justify-between">
             <!-- Theme Toggle -->
             <button id="theme-toggle" class="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
-                <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                </svg>
+                </svg> -->
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
                 </svg>
             </button>
 
             <!-- Logout Button -->
-            <button id="logout-btn" class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400">
+            
+        </div>
+        <button id="logout-btn" class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                 </svg>
                 <span>Logout</span>
             </button>
-        </div>
     </div>
 </div>
 
