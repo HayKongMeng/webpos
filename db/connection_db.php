@@ -1,14 +1,14 @@
 <?php
     // connection_db.php
-    // $host = "db"; // Use the service name from docker-compose.yml
-    // $dbUsername = "pos_user";
-    // $dbPassword = "1234";
-    // $dbName = "pos_mart";
-
-    $host = "localhost"; // Use the service name from docker-compose.yml
-    $dbUsername = "root";
-    $dbPassword = "";
+    $host = "db"; // Use the service name from docker-compose.yml
+    $dbUsername = "pos_user";
+    $dbPassword = "1234";
     $dbName = "pos_mart";
+
+    // $host = "localhost"; // Use the service name from docker-compose.yml
+    // $dbUsername = "root";
+    // $dbPassword = "";
+    // $dbName = "pos_mart";
 
     // Establish database connection
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
