@@ -209,76 +209,74 @@ if (file_exists('sidebar.php')) {
         </div>
     </div>
 
-    <!-- Recent Sales Table -->
-    <div class="mt-8 bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
-        <div class="px-4 sm:px-6 py-5 border-b border-gray-200 dark:border-gray-700">
+    <!-- Recent Sales Cards -->
+    <div class="mt-8">
+        <div class="px-4 sm:px-6 pb-5">
             <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">Recent Sales Transactions</h3>
         </div>
 
         <?php if (!empty($recent_sales)): ?>
-            <div class="overflow-x-auto custom-scrollbar">
-                <table class="min-w-full bg-white dark:bg-gray-800">
-                    <thead>
-                    <tr class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-sm leading-normal">
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">No</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Date</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Customer</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Contact</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Email</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Address</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Items Purchased</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Total Items</th>
-                        <th class="py-3 px-4 sm:px-6 text-left font-medium">Total Amount</th>
-                    </tr>
-                    </thead>
-                    <tbody class="text-gray-600 dark:text-gray-400 text-sm">
-                    <?php foreach ($recent_sales as $sale): ?>
-                        <tr class="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/40 cursor-pointer sale-row"
-                            data-no="<?= htmlspecialchars($sale_no += 1) ?>"
-                            data-date="<?= htmlspecialchars(date('M j, Y H:i', strtotime($sale['SaleDate']))) ?>"
-                            data-customer="<?= $sale['CustomerName'] ? htmlspecialchars($sale['CustomerName']) : 'Guest' ?>"
-                            data-contact="<?= $sale['ContactNumber'] ? htmlspecialchars($sale['ContactNumber']) : 'N/A' ?>"
-                            data-email="<?= $sale['Email'] ? htmlspecialchars($sale['Email']) : 'N/A' ?>"
-                            data-address="<?= $sale['CustomerAddress'] ? htmlspecialchars($sale['CustomerAddress']) : 'N/A' ?>"
-                            data-items="<?= htmlspecialchars($sale['PurchasedItems']) ?>"
-                            data-total-items="<?= htmlspecialchars($sale['TotalItemsPurchased']) ?>"
-                            data-total-amount="<?= htmlspecialchars(number_format($sale['TotalAmount'], 2)) ?>">
-                            <td class="py-3 px-4 sm:px-6"><?= htmlspecialchars($sale_no) ?></td>
-                            <td class="py-3 px-4 sm:px-6"><?= htmlspecialchars(date('M j, Y H:i', strtotime($sale['SaleDate']))) ?></td>
-                            <td class="py-3 px-4 sm:px-6">
-                                <?= $sale['CustomerName'] ? htmlspecialchars($sale['CustomerName']) : '<span class="text-gray-400 dark:text-gray-500">Guest</span>' ?>
-                            </td>
-                            <td class="py-3 px-4 sm:px-6">
-                                <?= $sale['ContactNumber'] ? htmlspecialchars($sale['ContactNumber']) : '<span class="text-gray-400 dark:text-gray-500">N/A</span>' ?>
-                            </td>
-                            <td class="py-3 px-4 sm:px-6">
-                                <?= $sale['Email'] ? htmlspecialchars($sale['Email']) : '<span class="text-gray-400 dark:text-gray-500">N/A</span>' ?>
-                            </td>
-                            <td class="py-3 px-4 sm:px-6">
-                                <?= $sale['CustomerAddress'] ? htmlspecialchars($sale['CustomerAddress']) : '<span class="text-gray-400 dark:text-gray-500">N/A</span>' ?>
-                            </td>
-                            <td class="py-3 px-4 sm:px-6">
-                                <ul class="list-disc pl-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <?php foreach ($recent_sales as $sale): ?>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-200 dark:border-gray-700 transition-transform duration-200 hover:scale-[1.02] cursor-pointer sale-card"
+                        data-no="<?= htmlspecialchars($sale_no += 1) ?>"
+                        data-date="<?= htmlspecialchars(date('M j, Y H:i', strtotime($sale['SaleDate']))) ?>"
+                        data-customer="<?= $sale['CustomerName'] ? htmlspecialchars($sale['CustomerName']) : 'Guest' ?>"
+                        data-contact="<?= $sale['ContactNumber'] ? htmlspecialchars($sale['ContactNumber']) : 'N/A' ?>"
+                        data-email="<?= $sale['Email'] ? htmlspecialchars($sale['Email']) : 'N/A' ?>"
+                        data-address="<?= $sale['CustomerAddress'] ? htmlspecialchars($sale['CustomerAddress']) : 'N/A' ?>"
+                        data-items="<?= htmlspecialchars($sale['PurchasedItems']) ?>"
+                        data-total-items="<?= htmlspecialchars($sale['TotalItemsPurchased']) ?>"
+                        data-total-amount="<?= htmlspecialchars(number_format($sale['TotalAmount'], 2)) ?>">
+                        <div class="p-4 sm:p-6">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Sale #<?= htmlspecialchars($sale_no) ?></h4>
+                                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-1">
+                                        <?= $sale['CustomerName'] ? htmlspecialchars($sale['CustomerName']) : '<span class="text-gray-400 dark:text-gray-500">Guest</span>' ?>
+                                    </h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                        <?= htmlspecialchars(date('M j, Y H:i', strtotime($sale['SaleDate']))) ?>
+                                    </p>
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                    $<?= htmlspecialchars(number_format($sale['TotalAmount'], 2)) ?>
+                                </span>
+                            </div>
+
+                            <div class="mt-4">
+                                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                    <?= $sale['ContactNumber'] ? htmlspecialchars($sale['ContactNumber']) : 'N/A' ?>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                    <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <?= $sale['Email'] ? htmlspecialchars($sale['Email']) : 'N/A' ?>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Items Purchased (<?= htmlspecialchars($sale['TotalItemsPurchased']) ?>)</h4>
+                                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                                     <?php if ($sale['PurchasedItems']): ?>
                                         <?php foreach (explode(',', $sale['PurchasedItems']) as $item): ?>
-                                            <li><?= htmlspecialchars(trim($item)) ?></li>
+                                            <li class="truncate">• <?= htmlspecialchars(trim($item)) ?></li>
                                         <?php endforeach; ?>
                                     <?php else: ?>
-                                        <span class="text-gray-400 dark:text-gray-500">No items</span>
+                                        <li class="text-gray-400 dark:text-gray-500">No items</li>
                                     <?php endif; ?>
                                 </ul>
-                            </td>
-                            <td class="py-3 px-4 sm:px-6"><?= htmlspecialchars($sale['TotalItemsPurchased']) ?></td>
-                            <td class="py-3 px-4 sm:px-6 font-medium text-gray-800 dark:text-gray-200">
-                                $<?= htmlspecialchars(number_format($sale['TotalAmount'], 2)) ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="p-6 text-center">
+            <div class="p-6 text-center bg-white dark:bg-gray-800 rounded-lg shadow">
                 <svg class="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                 </svg>
@@ -329,16 +327,14 @@ if (file_exists('sidebar.php')) {
 </div>
 
 <script>
-
     document.addEventListener('DOMContentLoaded', function () {
-
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
 
-        const saleRows = document.querySelectorAll('.sale-row');
+        const saleCards = document.querySelectorAll('.sale-card');
         const modal = document.getElementById('saleModal');
         const closeModalButton = document.getElementById('closeModal');
         const modalNo = document.getElementById('modal-no');
@@ -351,8 +347,8 @@ if (file_exists('sidebar.php')) {
         const modalTotalItems = document.getElementById('modal-total-items');
         const modalTotalAmount = document.getElementById('modal-total-amount');
 
-        saleRows.forEach(row => {
-            row.addEventListener('click', function () {
+        saleCards.forEach(card => {
+            card.addEventListener('click', function () {
                 modalNo.textContent = this.dataset.no;
                 modalDate.textContent = this.dataset.date;
                 modalCustomer.textContent = this.dataset.customer;
@@ -378,16 +374,6 @@ if (file_exists('sidebar.php')) {
                 modalTotalAmount.textContent = this.dataset.totalAmount;
                 modal.classList.remove('hidden');
             });
-
-            closeModalButton.addEventListener('click', function () {
-                modal.classList.add('hidden');
-            });
-
-            modal.addEventListener('click', function (event) {
-                if (event.target === modal) {
-                    modal.classList.add('hidden');
-                }
-            });
         });
 
         closeModalButton.addEventListener('click', function () {
@@ -400,7 +386,6 @@ if (file_exists('sidebar.php')) {
             }
         });
     });
-
 </script>
 </body>
 </html>
