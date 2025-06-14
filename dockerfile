@@ -16,9 +16,10 @@ WORKDIR /var/www/html
 # Copy application files
 COPY . /var/www/html/
 
-# Adjust permissions
-RUN sudo chown -R www-data:www-data /var/www/html \
-    && sudo chmod -R 755 /var/www/html
+# Make sure upload directory exists and is writable by www-data
+RUN mkdir -p /var/www/html/src/uploads/products \
+    && chown -R www-data:www-data /var/www/html/src/uploads \
+    && chmod -R 755 /var/www/html/src/uploads
 
 # Expose port 80
 EXPOSE 80
