@@ -44,17 +44,6 @@
                             View Products
                         </a>
                     </div>
-
-                    <!-- Orders Section -->
-                    <div class="space-y-1 mt-4">
-                        <h2 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Orders</h2>
-                        <a href="order_product.php" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-gray-900 dark:text-white hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
-                            <svg class="w-5 h-5 mr-3 text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                            </svg>
-                            New Order
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
