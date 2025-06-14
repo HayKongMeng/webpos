@@ -338,7 +338,7 @@ if (file_exists('sidebar.php')) {
             document.documentElement.classList.remove('dark');
         }
 
-        const saleCards = document.querySelectorAll('.sale-card');
+        const saleRows = document.querySelectorAll('.sale-row');
         const modal = document.getElementById('saleModal');
         const closeModalButton = document.getElementById('closeModal');
         const modalNo = document.getElementById('modal-no');
@@ -351,8 +351,8 @@ if (file_exists('sidebar.php')) {
         const modalTotalItems = document.getElementById('modal-total-items');
         const modalTotalAmount = document.getElementById('modal-total-amount');
 
-        saleCards.forEach(card => {
-            card.addEventListener('click', function () {
+        saleRows.forEach(row => {
+            row.addEventListener('click', function () {
                 modalNo.textContent = this.dataset.no;
                 modalDate.textContent = this.dataset.date;
                 modalCustomer.textContent = this.dataset.customer;
@@ -361,7 +361,7 @@ if (file_exists('sidebar.php')) {
                 modalAddress.textContent = this.dataset.address;
 
                 // Populate items list
-                modalItems.innerHTML = '';
+                modalItems.innerHTML = ''; // Clear previous items
                 const items = this.dataset.items ? this.dataset.items.split(',') : [];
                 items.forEach(item => {
                     const li = document.createElement('li');
@@ -377,6 +377,16 @@ if (file_exists('sidebar.php')) {
                 modalTotalItems.textContent = this.dataset.totalItems;
                 modalTotalAmount.textContent = this.dataset.totalAmount;
                 modal.classList.remove('hidden');
+            });
+
+            closeModalButton.addEventListener('click', function () {
+                modal.classList.add('hidden');
+            });
+
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
             });
         });
 
