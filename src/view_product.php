@@ -189,10 +189,6 @@ $conn->close();
       <div class="mt-6 flex justify-end space-x-3">
         <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-4 py-2 rounded-lg shadow">
           <i class="fas fa-print mr-1"></i> Print
-          <button id="send-telegram" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg shadow">
-             <i class="fa-brands fa-telegram mr-1"></i> Send to Telegram
-         </button>
-
         </button>
         <button id="print-cancel" class="bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm px-4 py-2 rounded-lg dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">
           Cancel
@@ -222,11 +218,6 @@ $conn->close();
             </div>
         </div>
     </div>
-
-    <a href="export_pdf.php" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 px-5 rounded-lg flex items-center gap-2 transition duration-300 shadow-sm">
-    <i class="fa-solid fa-file-pdf"></i>
-    <span>Export PDF</span>
-</a>
 
 
 
@@ -337,23 +328,6 @@ printButtons.forEach(button => {
 printCancel.addEventListener('click', () => {
   printModal.classList.add('hidden');
 });
-
-document.getElementById("send-telegram").addEventListener("click", () => {
-  const productId = document.getElementById("invoice-id").textContent;
-
-  fetch(`send_invoice.php?id=${parseInt(productId)}`)
-    .then(res => res.text())
-    .then(data => {
-      alert("✅ Invoice sent to Telegram!");
-      console.log(data);
-    })
-    .catch(err => {
-      alert("❌ Failed to send to Telegram");
-      console.error(err);
-    });
-});
-
-
 
         document.addEventListener('DOMContentLoaded', function() {
             const editButtons = document.querySelectorAll('.edit-btn');

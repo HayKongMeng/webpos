@@ -157,7 +157,7 @@ if (file_exists('sidebar.php')) {
 
     <!-- Welcome header -->
     <div class="mb-6">
-        <h1 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Welcome to the Admin Dashboard, <?php echo htmlspecialchars($username); ?></h1>
+        <h1 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">Hello, <?php echo htmlspecialchars($username); ?></h1>
         <p class="text-gray-600 dark:text-gray-400 mt-1">Here's what's happening with your store today.</p>
     </div>
 
