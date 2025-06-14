@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Fetch categories for the dropdown
 $categories =[];
-$result_categories = $conn->query("SELECT CategoryID, CategoryName FROM Categories");
+$result_categories = $conn->query("SELECT CategoryID, CategoryName FROM categories");
 
 if ($result_categories->num_rows > 0) {
     while ($row = $result_categories->fetch_assoc()) {
